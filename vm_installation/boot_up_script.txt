@@ -1,0 +1,18 @@
+#! /bin/bash
+
+cd /tmp
+if [ ! -e .conda_done ] && ( true )
+then
+    # update apt-get
+    sudo apt-get update && sudo apt-get install wget htop --yes -q
+    # clone repo
+    git clone https://github.com/Vlipper/default.git /tmp/git_default
+    # install_conda
+    bash /tmp/git_default/vm_installation/install_conda.sh
+    
+    # install_cuda
+    if [ ! -e .cuda_done ] && ( false )
+    then 
+        bash /tmp/git_default/vm_installation/install_cuda.sh # !!!add link!!!
+    fi
+fi
