@@ -21,4 +21,4 @@ conda config --prepend channels conda-forge
 conda install --file /tmp/git_default/vm_installation/requirements.txt --yes
 
 # make done file
-touch .conda_done
+touch /opt/.conda_done
